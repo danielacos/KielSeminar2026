@@ -1,0 +1,50 @@
+\ProvidesPackage{packages}
+
+%----- MIS PAQUETES -----%
+
+%%% Language %%%
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+% \usepackage{babel}[spanish] %%% Uncomment for Spanish
+\RequirePackage{moresize}
+
+%%% Mathematics %%%
+\RequirePackage{amsmath,amsfonts,amssymb,amsthm}
+\RequirePackage{bm,bbm}
+\RequirePackage{mathtools}
+\RequirePackage[cal=boondox]{mathalpha}
+
+%%% Graphics %%%
+\RequirePackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\RequirePackage{pgfplots}
+\RequirePackage{xcolor}
+
+\RequirePackage{graphicx}
+% \RequirePackage{movie15}
+\RequirePackage{animate}
+% \RequirePackage{multimedia}
+
+\RequirePackage{caption,subcaption}
+
+%%% Tables %%%
+\RequirePackage{colortbl}
+
+\RequirePackage{tabularx}
+\RequirePackage{array, multirow, hhline, booktabs, rotating}
+\RequirePackage{multicol}
+
+%%% Units %%%
+\RequirePackage{units}
+
+%%% Bibliography%%%
+% \RequirePackage{cite}
+% \def\citepunct{; \penalty\citepunctpenalty} % Semmicolon instead of commas to separate multiple references using apalike
+
+% \RequirePackage[style=authoryear,dashed=false,backend=bibtex,useprefix=true,doi=false]{biblatex}
+\RequirePackage[giveninits=true,backend=bibtex,sortcites,maxcitenames=99,maxbibnames=4, style=trad-plain, defernumbers=true,doi=false]{biblatex}
+\DeclareFieldFormat{titlecase}{#1} % preserve capital letters in titles
+\addbibresource{references.bib} % If biblatex is used
+\AtBeginBibliography{\footnotesize} % If biblatex is used to make it smaller
+
+%------------------------%

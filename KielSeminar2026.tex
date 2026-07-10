@@ -1,0 +1,44 @@
+\documentclass{beamer}
+
+\usetheme[nofpages=false, % Set to false to hide number of pages
+          %pageofpages=of,% String used between the current page and the
+                         % total page count.
+          bullet=circle,% Use circles instead of squares for bullets.
+          titleline=true,% Show a line below the frame title.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=logo_UCA,% Logo for the first page.
+        %   watermark=marca_UCA,% Watermark used in every page.
+          watermarkheight=23px,% Height of the watermark.
+          watermarkheightmult=10,% The watermark image is 4 times bigger
+                                % than watermarkheight.
+          ]{Torino}
+          
+\usecolortheme{UCA}
+
+%----- MY PACKAGES -----%
+
+\usepackage{packages}
+
+%----- MY MACROS -----%
+
+\include{macros}
+
+%----- ANIMATIONS -----%
+% \def\animation{0} % Not include animations
+\def\animation{1} % Include animations
+
+%----- TITLE PAGE -----%
+
+\author{Daniel Acosta Soba}
+\title{On a positive linear numerical approximation of a chemotaxis system involving dissipative gradient nonlinearities}
+\institute{\structure{
+    J. Rafael Rodr\'iguez Galv\'an \\ (Universidad de C\'adiz)\\ \vspace{0.2cm}
+    Giuseppe Viglialoro \\(Università degli Studi di Cagliari)
+    }}
+\date{\vspace*{-0.3cm}9th ECM - July 18, 2024}
+
+\begin{document}
+\include{tikzstyles}
+\include{content}
+\end{document}
+
