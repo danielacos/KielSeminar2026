@@ -208,6 +208,7 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
       \label{cha3:hyp:mesh_n}
       The mesh $\T_h$ of $\overline\Omega$ is structured in the sense that the \alert{line between the barycenters} of the triangles $K$ and $L$ is \alert{orthogonal to the interface} $e=K\cap L\in\E_h^i$.
   \end{hypothesis}
+  \vspace*{-0.15cm}
   \begin{figure}
       \begin{minipage}{0.5\textwidth}
           \begin{flushright}
@@ -383,7 +384,7 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
 \end{frame}
 
 \begin{frame}{One bulge of cells}
-  \vspace*{-0.3cm}
+  \vspace*{-0.4cm}
   \begin{figure}[htbp]
       \centering
       \boldmath{$u$}
@@ -555,7 +556,7 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
   \begin{itemize}
     \item $\alert{f}\colon\Omega\times (0,T)\to \mathbb{R}$ is a \structure{control function} that acts on the chemoattractant $v$.
     \item \underline{Goal:} minimize the \structure{loss function} $$\alert{J(u)}\coloneq\frac{1}{2}\int_0^T\int_\Omega (u-u_d)^2,$$ where \alert{$u_d$} is a \structure{desired state}.
-    \item \underline{Strategy:} train the parameters $\theta\in \R^P$ of a \structure{Fourier series} or \structure{neural network} $f_h(\theta)$ so that \alert{$f\approx f_h(\theta)$}.
+    \item \underline{Strategy:} train the parameters $\theta\in \R^P$ of a \structure{Fourier series} or \structure{neural network} $f_h(\theta)$ so that \alert{$f\approx f_h(\theta)$ mimimizes $J(u)$}.
   \end{itemize}
 \end{frame}
 
@@ -570,20 +571,28 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
     \vspace*{0.5cm}
 
     \only<1>{
-        \includegraphics[width=0.3\textwidth]{img/control/fcontrol_iteration_0.png}
-        \hfill
-        \includegraphics[width=0.3\textwidth]{img/control/v_iteration_0.png}
-        \hfill
-        \includegraphics[width=0.3\textwidth]{img/control/u_iteration_0.png}
+        \begin{tabular}{ccc}
+            \includegraphics[width=0.3\textwidth]{img/control/fcontrol_iteration_0.png}
+            &
+            \includegraphics[width=0.3\textwidth]{img/control/v_iteration_0.png}
+            &
+            \includegraphics[width=0.3\textwidth]{img/control/u_iteration_0.png}
+            \\
+            \hspace*{-0.7cm}Control $f$&\hspace*{0.3cm}Chemoattractant $v$&\hspace*{0.3cm}Cell density $u$
+        \end{tabular}
     }
 
     \only<2>{
         \if\animation1
-            \animategraphics[autoplay,loop,width=0.3\textwidth,every=200]{5}{img/control/fcontrol_iteration_}{0}{13200}
-            \hfill
-            \animategraphics[autoplay,loop,width=0.3\textwidth,every=200]{5}{img/control/v_iteration_}{0}{13200}
-            \hfill
-            \animategraphics[autoplay,loop,width=0.3\textwidth,every=200]{5}{img/control/u_iteration_}{0}{13200}
+            \begin{tabular}{ccc}
+                \animategraphics[autoplay,loop,width=0.3\textwidth,every=200]{5}{img/control/fcontrol_iteration_}{0}{13200}
+                &
+                \animategraphics[autoplay,loop,width=0.3\textwidth,every=200]{5}{img/control/v_iteration_}{0}{13200}
+                &
+                \animategraphics[autoplay,loop,width=0.3\textwidth,every=200]{5}{img/control/u_iteration_}{0}{13200}
+                \\
+                \hspace*{-0.7cm}Control $f$&\hspace*{0.3cm}Chemoattractant $v$&\hspace*{0.3cm}Cell density $u$
+            \end{tabular}
         \fi
     }
 
@@ -596,22 +605,34 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
         \setlength{\itemsep}{1em}
         \item<1-> \structure{Tumor modeling:} therapy optimization, tumor growth control, etc.
         \only<1>{
-            \includegraphics[width=0.4\textwidth]{img/tumor/tumor/tumor_DG-UPW_Pi1_u_i_cropped-0.png}
-            \hfill
-            \includegraphics[width=0.4\textwidth]{img/tumor/nutrients/tumor_DG-UPW_Pi1_n_i_cropped-0.png}
+            \begin{tabular}{cc}
+                \includegraphics[width=0.4\textwidth]{img/tumor/tumor/tumor_DG-UPW_Pi1_u_i_cropped-0.png}
+                &
+                \hspace*{1cm}
+                \includegraphics[width=0.4\textwidth]{img/tumor/nutrients/tumor_DG-UPW_Pi1_n_i_cropped-0.png}\\
+                \hspace*{-0.7cm}Tumor&\hspace*{0.3cm}Nutrients
+            \end{tabular}
         }
         \only<2>{
         \if\animation1
-            \animategraphics[autoplay,loop,width=0.4\textwidth,every=1]{5}{img/tumor/tumor/tumor_DG-UPW_Pi1_u_i_cropped-}{0}{50}
-            \hfill
-            \animategraphics[autoplay,loop,width=0.4\textwidth,every=1]{5}{img/tumor/nutrients/tumor_DG-UPW_Pi1_n_i_cropped-}{0}{50}
+            \begin{tabular}{cc}
+                \animategraphics[autoplay,loop,width=0.4\textwidth,every=1]{5}{img/tumor/tumor/tumor_DG-UPW_Pi1_u_i_cropped-}{0}{50}
+                &
+                \hspace*{1cm}
+                \animategraphics[autoplay,loop,width=0.4\textwidth,every=1]{5}{img/tumor/nutrients/tumor_DG-UPW_Pi1_n_i_cropped-}{0}{50}\\
+                \hspace*{-0.7cm}Tumor&\hspace*{0.3cm}Nutrients
+            \end{tabular}
         \fi
         }
         \item<3-> \structure{Cell migration:} wound healing, brain comprehension, etc.
         \only<3>{
-            \includegraphics[width=0.45\textwidth]{img/neuroblast/mouse-brain.png}
-            \hfill
-            \includegraphics[width=0.45\textwidth]{img/neuroblast/steady-opt.png}
+            \begin{tabular}{cc}
+                \includegraphics[width=0.45\textwidth]{img/neuroblast/mouse-brain.png}
+                &
+                \includegraphics[width=0.45\textwidth]{img/neuroblast/steady-opt.png}
+                \\
+                \hspace*{-0.7cm}Real image&\hspace*{0.3cm}Numerical simulation
+            \end{tabular}
         }
         \item<4-> \structure{Predator-prey dynamics:} population control, ecosystem management, etc.
         \item<4-> \structure{\ldots}
