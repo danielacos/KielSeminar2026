@@ -5,8 +5,6 @@
 \titlepage
 \end{frame}
 
-\subsection{Keller-Segel model}
-
 \begin{frame}{What is chemotaxis?}
     \centering
     \only<1>{
@@ -19,6 +17,8 @@
     \fi
     }
 \end{frame}
+
+\subsection{Keller-Segel model}
 
 \begin{frame}{Keller-Segel model}
   \small
@@ -228,8 +228,8 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
   \vspace*{-0.6cm}
   \begin{align*}
       % \label{cha3:def:aupw}
-    %   \alert{\aupw{\mu}{u}{\bu}}\coloneqq& 
-    \int_\Omega (\nabla\mu\cdot\nabla\bu)u
+      \alert{\aupw{\mu}{u}{\bu}}\coloneqq& 
+    % \int_\Omega (\nabla\mu\cdot\nabla\bu)u
     %   \\&+ 
       \sum_{e\in\E_h^i,e=K\cap L}\int_e\left(\left(-\nabland\mu\right)_\oplus\uK-(-\nabland\mu)_\ominus\uL\right)\salto{\bu},
   \end{align*}
@@ -363,7 +363,7 @@ for all $\bu,\bmu\in \Pd_0(\T_h)$.
       u_0 = 1000 e^{-100 (x^2 + y^2)}, \quad
       v_0 = 500e^{-50 (x^2 + y^2)},
   \end{equation*}
-  Expected blow-up phenomenon\footfullcite{chertock_second-order_2008} for $t^*\in(4.4\cdot 10^{-5},10^{-4})$.
+  Expected blow-up phenomenon\footfullcite{chertock_second-order_2008} for $T^*\in(4.4\cdot 10^{-5},10^{-4})$.
   \begin{figure}[htbp]
       \centering
       \begin{subfigure}{0.49\textwidth}
